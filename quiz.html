@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クイズ | クラシック音楽クイズ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">&#9835; クラシック音楽クイズ</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">ホーム</a>
+        <a href="ranking.html" class="nav-link">ランキング</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container quiz-container">
+      <!-- スタート画面 -->
+      <div id="quiz-start" class="quiz-start">
+        <div class="start-card">
+          <div class="start-icon" id="start-icon"></div>
+          <h2 id="start-level-name"></h2>
+          <p id="start-level-desc"></p>
+          <div class="start-info">
+            <span>&#128221; 全10問</span>
+            <span>&#9201; タイマー計測</span>
+          </div>
+          <div class="name-input-area">
+            <label for="player-name">ニックネーム</label>
+            <input type="text" id="player-name" placeholder="名前を入力" maxlength="20">
+          </div>
+          <button id="start-btn" class="btn btn-primary btn-large">スタート</button>
+        </div>
+      </div>
+
+      <!-- クイズ画面 -->
+      <div id="quiz-play" class="quiz-play hidden">
+        <div class="quiz-header">
+          <div class="quiz-progress">
+            <span id="current-question">1</span> / <span id="total-questions">10</span>
+          </div>
+          <div class="quiz-timer">
+            <span class="timer-icon">&#9201;</span>
+            <span id="timer">00:00</span>
+          </div>
+          <div class="quiz-score">
+            正解: <span id="score">0</span>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="question-card">
+          <h3 class="question-number" id="question-number">Q1</h3>
+          <p class="question-text" id="question-text"></p>
+          <div class="choices" id="choices"></div>
+        </div>
+        <div class="answer-feedback hidden" id="answer-feedback">
+          <div class="feedback-icon" id="feedback-icon"></div>
+          <p class="feedback-text" id="feedback-text"></p>
+          <p class="feedback-explanation" id="feedback-explanation"></p>
+          <button id="next-btn" class="btn btn-primary">次の問題</button>
+        </div>
+      </div>
+
+      <!-- 結果画面 -->
+      <div id="quiz-result" class="quiz-result hidden">
+        <div class="result-card">
+          <h2 class="result-title">クイズ結果</h2>
+          <div class="result-level" id="result-level"></div>
+          <div class="result-stats">
+            <div class="stat-item">
+              <div class="stat-value" id="result-score">0</div>
+              <div class="stat-label">正解数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="result-total">10</div>
+              <div class="stat-label">問題数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="result-time">00:00</div>
+              <div class="stat-label">タイム</div>
+            </div>
+          </div>
+          <div class="result-message" id="result-message"></div>
+          <div class="result-actions">
+            <a href="" id="retry-btn" class="btn btn-primary">もう一度挑戦</a>
+            <a href="ranking.html" class="btn btn-secondary">ランキングを見る</a>
+            <a href="index.html" class="btn btn-outline">ホームに戻る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 クラシック音楽クイズ. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

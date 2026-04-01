@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラシック音楽クイズ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">&#9835; クラシック音楽クイズ</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">ホーム</a>
+        <a href="ranking.html" class="nav-link">ランキング</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h2 class="hero-title">あなたのクラシック音楽の知識を<br>試してみよう</h2>
+        <p class="hero-subtitle">初級・中級・上級の3つのレベルで挑戦。<br>正答数とタイムでランキングを目指そう!</p>
+      </div>
+    </section>
+
+    <!-- 難易度選択セクション -->
+    <section class="level-section">
+      <div class="container">
+        <h2 class="section-title">難易度を選択</h2>
+        <div class="level-grid">
+          <!-- 初級 -->
+          <div class="level-card level-beginner">
+            <div class="level-icon">&#127926;</div>
+            <h3 class="level-name">初級</h3>
+            <p class="level-desc">クラシック音楽を聴いたことがある方向け。有名な作曲家や曲に関する基本問題です。</p>
+            <ul class="level-info">
+              <li>&#128221; 全10問</li>
+              <li>&#9201; タイマー付き</li>
+              <li>&#127941; ランキング対応</li>
+            </ul>
+            <a href="quiz.html?level=beginner" class="btn btn-beginner">挑戦する</a>
+          </div>
+
+          <!-- 中級 -->
+          <div class="level-card level-intermediate">
+            <div class="level-icon">&#127931;</div>
+            <h3 class="level-name">中級</h3>
+            <p class="level-desc">クラシック音楽をある程度知っている方向け。楽曲の詳細や音楽理論の知識が問われます。</p>
+            <ul class="level-info">
+              <li>&#128221; 全10問</li>
+              <li>&#9201; タイマー付き</li>
+              <li>&#127941; ランキング対応</li>
+            </ul>
+            <a href="quiz.html?level=intermediate" class="btn btn-intermediate">挑戦する</a>
+          </div>
+
+          <!-- 上級 -->
+          <div class="level-card level-advanced">
+            <div class="level-icon">&#127932;</div>
+            <h3 class="level-name">上級</h3>
+            <p class="level-desc">クラシック音楽マニア向け。音楽史の深い知識やマニアックなトリビアが必要です。</p>
+            <ul class="level-info">
+              <li>&#128221; 全10問</li>
+              <li>&#9201; タイマー付き</li>
+              <li>&#127941; ランキング対応</li>
+            </ul>
+            <a href="quiz.html?level=advanced" class="btn btn-advanced">挑戦する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ルール説明 -->
+    <section class="rules-section">
+      <div class="container">
+        <h2 class="section-title">クイズのルール</h2>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <div class="rule-number">1</div>
+            <h4>難易度を選択</h4>
+            <p>初級・中級・上級の3つから選べます。各レベル10問出題されます。</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-number">2</div>
+            <h4>制限時間内に回答</h4>
+            <p>スタートと同時にタイマーが開始。素早く正確に答えましょう。</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-number">3</div>
+            <h4>ランキングに登録</h4>
+            <p>正答数が多く、タイムが短いほど上位にランクイン!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 クラシック音楽クイズ. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

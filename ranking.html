@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ランキング | クラシック音楽クイズ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">&#9835; クラシック音楽クイズ</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">ホーム</a>
+        <a href="ranking.html" class="nav-link active">ランキング</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container ranking-container">
+      <h2 class="section-title">ランキング</h2>
+
+      <!-- レベルタブ -->
+      <div class="ranking-tabs">
+        <button class="tab-btn active" data-level="beginner">初級</button>
+        <button class="tab-btn" data-level="intermediate">中級</button>
+        <button class="tab-btn" data-level="advanced">上級</button>
+      </div>
+
+      <!-- ランキングテーブル -->
+      <div class="ranking-table-wrap">
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th class="rank-col">順位</th>
+              <th class="name-col">名前</th>
+              <th class="score-col">正解数</th>
+              <th class="time-col">タイム</th>
+              <th class="date-col">日付</th>
+            </tr>
+          </thead>
+          <tbody id="ranking-body">
+            <!-- JS で動的挿入 -->
+          </tbody>
+        </table>
+        <div class="ranking-empty hidden" id="ranking-empty">
+          <p>まだ記録がありません。<br>クイズに挑戦してランキングに登録しよう!</p>
+          <a href="index.html" class="btn btn-primary">クイズに挑戦</a>
+        </div>
+      </div>
+
+      <div class="ranking-actions">
+        <button id="clear-ranking" class="btn btn-outline btn-small">ランキングをリセット</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 クラシック音楽クイズ. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/ranking.js"></script>
+</body>
+</html>
