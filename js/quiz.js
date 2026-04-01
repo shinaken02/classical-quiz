@@ -17,7 +17,6 @@
   const resultScreen = document.getElementById("quiz-result");
   const startBtn = document.getElementById("start-btn");
   const nextBtn = document.getElementById("next-btn");
-  const playerNameInput = document.getElementById("player-name");
 
   // スタート画面セットアップ
   document.getElementById("start-icon").textContent = data.icon;
@@ -183,47 +182,10 @@
 
     // リトライボタン
     document.getElementById("retry-btn").href = "quiz.html?level=" + level;
-
-    // ランキング保存
-    saveToRanking();
-  }
-
-  // ランキング保存
-  function saveToRanking() {
-    const playerName = playerNameInput.value.trim() || "\u540D\u7121\u3057";
-    const record = {
-      name: playerName,
-      score: score,
-      total: questions.length,
-      time: elapsedSeconds,
-      timeFormatted: formatTime(elapsedSeconds),
-      date: new Date().toLocaleDateString("ja-JP"),
-      level: level
-    };
-
-    const key = "classicQuizRanking_" + level;
-    let rankings = JSON.parse(localStorage.getItem(key) || "[]");
-    rankings.push(record);
-
-    // ソート: 正解数降順 → タイム昇順
-    rankings.sort(function (a, b) {
-      if (b.score !== a.score) return b.score - a.score;
-      return a.time - b.time;
-    });
-
-    // 上位20件保持
-    rankings = rankings.slice(0, 20);
-    localStorage.setItem(key, JSON.stringify(rankings));
   }
 
   // スタート
   startBtn.addEventListener("click", function () {
-    if (!playerNameInput.value.trim()) {
-      playerNameInput.focus();
-      playerNameInput.style.borderColor = "#ff6060";
-      return;
-    }
-
     questions = shuffleArray(data.questions);
     currentIndex = 0;
     score = 0;
@@ -235,15 +197,4 @@
     showQuestion();
   });
 
-  // Enterキーでスタート
-  playerNameInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      startBtn.click();
-    }
-  });
-
-  // 入力時にエラー解除
-  playerNameInput.addEventListener("input", function () {
-    playerNameInput.style.borderColor = "#ddd";
-  });
 })();
